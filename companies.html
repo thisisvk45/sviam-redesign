@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>For companies · SViam</title>
+<meta name="description" content="Give Maya your job description, skills and rubric. She runs the technical interview your way and hands your team the transcript, the code and a scorecard. Your team makes the call. Now in a limited hiring pilot." />
+<link rel="stylesheet" href="site.css" />
+<style>
+  /* select styled to match .msgform inputs */
+  .msgform select{font-family:inherit;font-size:15px;padding:11px 14px;border:1px solid var(--line-2);border-radius:10px;background:var(--surface);color:var(--ink);width:100%;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6 9l6 6 6-6' stroke='%236b736e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+  .msgform select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-wash)}
+  /* interview setup config visual */
+  .cfg-row{display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-top:1px solid var(--line)}
+  .cfg-row:first-of-type{border-top:0;padding-top:2px}
+  .cfg-lbl{flex:none;width:78px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding-top:5px}
+  .cfg-role{font-size:16px;font-weight:600;color:var(--ink);padding-top:2px}
+  .cfg-chips{display:flex;flex-wrap:wrap;gap:8px}
+  .cfg-chip{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--ink-3);background:rgba(11,15,13,.05);border-radius:999px;padding:5px 11px}
+  .cfg-chip.on{color:var(--accent-text);background:var(--accent-wash)}
+  .cfg-seg{display:inline-flex;background:rgba(11,15,13,.05);border-radius:999px;padding:3px;gap:2px}
+  .cfg-opt{font-size:13px;font-weight:600;color:var(--ink-2);padding:6px 16px;border-radius:999px}
+  .cfg-opt.on{background:var(--accent);color:#fff}
+  /* left-aligned heading block: H2 with supporting line directly under it */
+  .head-block{margin-bottom:40px}
+  .head-block h2{max-width:20ch}
+  .head-block .hb-p{margin-top:14px;max-width:60ch;color:var(--ink-2);font-size:17px;line-height:1.5}
+  /* top flag strip: full-width tinted callout below the hero */
+  .flagstrip{background:var(--accent-wash)}
+  .flagstrip .wrap{display:flex;align-items:center;gap:16px;padding-top:20px;padding-bottom:20px}
+  .flagstrip .fs-txt{font-size:16px;color:var(--ink);line-height:1.45}
+  .flagstrip .fs-txt b{font-weight:600}
+  .flagstrip .fs-chip{flex:none;margin-left:auto}
+  @media(max-width:700px){.flagstrip .wrap{flex-wrap:wrap}.flagstrip .fs-chip{margin-left:0}}
+  /* integrity: open detect list, no boxes */
+  .detects{list-style:none;display:grid;gap:0;margin-top:6px}
+  .detects li{display:flex;align-items:baseline;gap:14px;padding:16px 0;border-top:1px solid var(--line)}
+  .detects li:first-child{border-top:0}
+  .detects .dt{font-weight:600;font-size:16px;color:var(--ink);flex:none;min-width:132px}
+  .detects .dd{font-size:14.5px;color:var(--ink-2);line-height:1.45}
+</style>
+</head>
+<body data-page="companies">
+  <nav class="site" data-nav></nav>
+
+  <!-- PATTERN 1: split hero, personalisation config panel on the right -->
+  <header class="hero">
+    <div class="wrap grid12">
+      <div class="hero-copy">
+        <span class="kick"><span class="d"></span>For companies</span>
+        <h1 class="display hero-h1">An interviewer that hires the way your team does.</h1>
+        <p class="lead">Give Maya your job description, skills and rubric. She runs the technical interview your way and hands your team the transcript, the code and a scorecard. Your team makes the call.</p>
+        <div class="cta">
+          <a class="btn btn-green btn-lg" href="#pilot">Request pilot access</a>
+          <a class="btn btn-outline btn-lg" href="product.html">See how it works</a>
+        </div>
+        <p class="note"><b>Your first 5 interviews are free in the pilot.</b></p>
+      </div>
+      <div class="hero-visual">
+        <div class="viz">
+          <div class="viz-h"><span class="t">Set your bar</span><span class="s">Backend hiring</span></div>
+          <div class="cfg-row">
+            <span class="cfg-lbl">Role</span>
+            <span class="cfg-role">Backend Engineer</span>
+          </div>
+          <div class="cfg-row">
+            <span class="cfg-lbl">Topics</span>
+            <span class="cfg-chips">
+              <span class="cfg-chip on">Data structures</span>
+              <span class="cfg-chip on">Concurrency</span>
+              <span class="cfg-chip on">System design</span>
+              <span class="cfg-chip">APIs</span>
+            </span>
+          </div>
+          <div class="cfg-row">
+            <span class="cfg-lbl">Difficulty</span>
+            <span class="cfg-seg">
+              <span class="cfg-opt">Easy</span>
+              <span class="cfg-opt on">Medium</span>
+              <span class="cfg-opt">Hard</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- top flag: AI-assist detection is a key selling point, flagged near the top -->
+  <div class="flagstrip"><div class="wrap">
+    <p class="fs-txt"><b>Maya catches the AI-assist tools a normal video call cannot:</b> on-screen co-pilots, answer overlays, hidden prompts.</p>
+    <span class="chip chip-soon fs-chip">In development</span>
+  </div></div>
+
+  <!-- PATTERN 2 split header + horizontal icon flow: how hiring works (4 steps, no duplicates) -->
+  <section><div class="wrap">
+    <div class="split-head">
+      <h2>From open role to clear call</h2>
+      <p class="sh-p">One live interview, and a decision your team can stand behind. This is the workflow we are opening up in the pilot.</p>
+    </div>
+    <div class="flow" style="--n:4">
+      <div class="flow-step">
+        <div class="flow-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h9M4 12h13M4 18h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="17" cy="6" r="2.2" stroke="currentColor" stroke-width="1.6"/><circle cx="20" cy="12" r="2.2" stroke="currentColor" stroke-width="1.6"/><circle cx="14" cy="18" r="2.2" stroke="currentColor" stroke-width="1.6"/></svg></div>
+        <h4>Set your bar</h4><p>The JD, the rubric and weighting, and the question style all live here.</p><span class="chip chip-pilot">In pilot</span>
+      </div>
+      <div class="flow-step">
+        <div class="flow-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h13v9H10l-3 2.5V6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M17 9l3-2v9l-3-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>Invite candidates</h4><p>Send one interview link per candidate.</p><span class="chip chip-pilot">In pilot</span>
+      </div>
+      <div class="flow-step">
+        <div class="flow-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><g stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M5 10v4M9 7v10M13 9v6M17 6v12M21 11v2"/></g></svg></div>
+        <h4>Maya interviews</h4><p>A real, live technical conversation.</p><span class="chip chip-av">Available</span>
+      </div>
+      <div class="flow-step">
+        <div class="flow-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>Review and decide</h4><p>Read the evidence, then make the call.</p><span class="chip chip-av">Available</span>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- integrity / cheating-detection: text + open detect list (moved up: key selling point) -->
+  <section><div class="wrap">
+    <div class="tvrow">
+      <div class="tv-text">
+        <span style="display:block;font-family:var(--font);font-weight:600;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px">Integrity</span>
+        <p class="soft" style="font-size:17px;line-height:1.5;margin-bottom:16px">An interview the way a company really hires: the candidate, not a co-pilot.</p>
+        <h3>The one thing Zoom misses.</h3>
+        <p>A normal video call or screen share cannot see modern AI-assist and answer-overlay tools. Maya can. She watches for the on-screen co-pilots candidates lean on, so the interview reflects the candidate, not a copilot.</p>
+        <p style="margin-top:14px"><span class="chip chip-soon">In development</span></p>
+        <p style="margin-top:12px;font-size:14px;color:var(--ink-3)">Live detection is rolling out through the pilot. It is in the making, not fully live yet.</p>
+      </div>
+      <div class="tv-visual">
+        <ul class="detects">
+          <li><span class="dt">AI assistants</span><span class="dd">On-screen copilots that whisper answers mid-question, like Cluely.</span></li>
+          <li><span class="dt">Answer overlays</span><span class="dd">Transparent windows that surface solutions over the editor, like ParakeetAI.</span></li>
+          <li><span class="dt">Screen readers</span><span class="dd">Tools that scrape the prompt and pipe it to a model in another tab.</span></li>
+          <li><span class="dt">Hidden prompts</span><span class="dd">Second devices and side channels a plain video call never catches.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- tabbed preview: transcript / code replay / scorecard -->
+  <section><div class="wrap">
+    <div class="head-block">
+      <h2>See the work, not just the verdict</h2>
+      <p class="hb-p">Every interview leaves your team a record they can review and revisit, so a hire is a decision, not a hunch.</p>
+    </div>
+    <div class="tabgroup" data-tabs>
+      <div class="tg-side">
+        <div class="tabs">
+          <button class="tab-btn active">Transcript</button>
+          <button class="tab-btn">Code replay</button>
+          <button class="tab-btn">Scorecard</button>
+        </div>
+        <p class="soft" style="margin-top:14px">Read how the candidate reasoned, watch the code as it was written, and trace every signal back to the moment it happened. Available in the pilot.</p>
+      </div>
+      <div class="tg-main">
+        <div class="tab-panel active">
+          <div class="viz">
+            <div class="viz-h"><span class="t">Transcript</span><span class="s">Two Sum &middot; 14:20</span></div>
+            <div class="msg maya"><div class="who">Maya &middot; 03:12</div><div class="bubble">Walk me through your approach before you write anything.</div></div>
+            <div class="msg you" style="margin-left:0"><div class="who">Candidate &middot; 03:24</div><div class="bubble">I would keep a hash map of the numbers I have seen, so each lookup is constant time.</div></div>
+            <div class="msg maya"><div class="who">Maya &middot; 04:01</div><div class="bubble">Good. What happens if the same number appears twice?</div></div>
+            <div class="msg you" style="margin-left:0"><div class="who">Candidate &middot; 04:15</div><div class="bubble">I store the index, so the second occurrence still finds the earlier one.</div></div>
+          </div>
+        </div>
+        <div class="tab-panel">
+          <div class="viz">
+            <div class="viz-h"><span class="t">Code replay</span><span class="s">Python &middot; 04:52</span></div>
+            <div class="code" style="border-radius:10px">
+              <span class="row"><span class="ln">1</span><span class="cm"># two sum</span></span>
+              <span class="row"><span class="ln">2</span><span class="kw">def</span> <span class="fn">two_sum</span>(nums, target):</span>
+              <span class="row"><span class="ln">3</span>&nbsp;&nbsp;seen = {}</span>
+              <span class="row"><span class="ln">4</span>&nbsp;&nbsp;<span class="kw">for</span> i, n <span class="kw">in</span> enumerate(nums):</span>
+              <span class="row hl"><span class="ln">5</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> target - n <span class="kw">in</span> seen:</span>
+              <span class="row"><span class="ln">6</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> [seen[target - n], i]</span>
+            </div>
+            <div class="scrub">
+              <div class="track"><span class="fill"></span><span class="mk" style="left:62%"></span></div>
+              <div class="lab"><span>00:00</span><span>04:52</span><span>14:20</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel">
+          <div class="viz">
+            <div class="viz-h"><span class="t">Scorecard</span><span class="s">Candidate C-2043</span></div>
+            <div class="bar-row">
+              <div class="bl"><b>Reasoning</b><span class="v">strong</span></div>
+              <div class="bar"><span style="width:82%"></span></div>
+            </div>
+            <div class="bar-row">
+              <div class="bl"><b>Code</b><span class="v">solid</span></div>
+              <div class="bar"><span style="width:74%"></span></div>
+            </div>
+            <div class="bar-row">
+              <div class="bl"><b>Communication</b><span class="v">clear</span></div>
+              <div class="bar"><span style="width:78%"></span></div>
+            </div>
+            <p class="muted" style="font-size:12.5px;margin-top:6px">Captured at 12:38, tied back to the moment in the replay.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- pricing strip: tight, centered line -->
+  <section style="padding:34px 0"><div class="wrap" style="text-align:center;border-top:1px solid var(--line);padding-top:34px">
+    <p class="callout" style="margin:0"><b>First 5 interviews free in the pilot.</b> Pricing after that is custom. <a class="arrow-link" href="pricing.html#hiring">See hiring pricing <span class="ar">&rarr;</span></a></p>
+  </div></section>
+
+  <!-- request pilot access: form + what happens next side by side -->
+  <section id="pilot"><div class="wrap">
+    <div class="split-head">
+      <h2>Request pilot access</h2>
+      <p class="sh-p">Tell us who you are and what you are hiring for. Maya supports the decision; it does not decide.</p>
+    </div>
+    <div class="grid12" style="align-items:start">
+      <form id="pilotForm" class="msgform" style="grid-column:1 / span 6">
+        <label>Full name
+          <input id="pname" type="text" required />
+        </label>
+        <label>Work email
+          <input id="pemail" type="email" required />
+        </label>
+        <label>Company
+          <input id="pcompany" type="text" required />
+        </label>
+        <label>Role you are hiring for
+          <select id="prole" required>
+            <option value="Backend Engineer">Backend Engineer</option>
+            <option value="Frontend Engineer">Frontend Engineer</option>
+            <option value="Full-stack Engineer">Full-stack Engineer</option>
+            <option value="Mobile Engineer">Mobile Engineer</option>
+            <option value="ML / AI Engineer">ML / AI Engineer</option>
+            <option value="Data Engineer">Data Engineer</option>
+            <option value="DevOps / Infra">DevOps / Infra</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn-green btn-lg">Request access</button>
+        <p class="muted" style="font-size:13.5px">We will reach out to set up your pilot. Opens an email with your details.</p>
+      </form>
+      <div style="grid-column:8 / span 5">
+        <div class="contact-lines" style="margin-top:0">
+          <div class="cl" style="border-top:0;padding-top:0">
+            <div class="cl-h">What happens next</div>
+            <p>We read every request ourselves. Because the pilot is limited, we take teams in small batches and reply personally.</p>
+          </div>
+          <div class="cl">
+            <div class="cl-h">We tune your interview</div>
+            <p>We help you set the role, topics, and difficulty, then hand you interview links to send to candidates.</p>
+          </div>
+          <div class="cl">
+            <div class="cl-h">You run real interviews</div>
+            <p>Maya runs the live conversation. Your first 5 are free, and your team reads the transcript, code replay, and scorecard.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- PATTERN 4: one centered dark band -->
+  <section class="closing-dark"><div class="wrap">
+    <h2>Run real interviews.<br>Keep the decision.</h2>
+    <p>Maya runs the technical conversation and captures the evidence. Your team reads it and makes the call.</p>
+    <div class="cta">
+      <a class="btn btn-green btn-lg" href="#pilot">Request pilot access</a>
+      <a class="btn btn-onwhite btn-lg" href="product.html">See how it works</a>
+    </div>
+  </div></section>
+
+  <footer class="site" data-foot></footer>
+  <script src="site.js"></script>
+  <script>
+  (function () {
+    var form = document.getElementById("pilotForm");
+    if (!form) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = document.getElementById("pname").value;
+      var email = document.getElementById("pemail").value;
+      var company = document.getElementById("pcompany").value;
+      var role = document.getElementById("prole").value;
+      var subject = "Pilot access request from " + company;
+      var body =
+        "Name: " + name + "\n" +
+        "Work email: " + email + "\n" +
+        "Company: " + company + "\n" +
+        "Role hiring for: " + role + "\n\n" +
+        "We would like to request access to the SViam hiring pilot.";
+      window.location.href =
+        "mailto:vikas.kumar@sviam.in?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(body);
+    });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Campus placement portal &middot; SViam</title>
+<link rel="stylesheet" href="site.css" />
+<style>
+  .pg{padding:100px 0 90px}
+  .pg-head{margin-bottom:8px}
+  .pg-head h1{font-size:clamp(26px,3vw,34px)}
+  .pg-head .campline{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px;font-size:14px;color:var(--ink-3)}
+  .pg-head .campline b{color:var(--ink);font-weight:600}
+  .pg-head .dot{width:3px;height:3px;border-radius:50%;background:var(--line-2)}
+  .season{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--accent-text);background:var(--accent-wash);border-radius:999px;padding:3px 10px}
+  .cg-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:22px;margin-top:28px;align-items:start}
+  .cg-side .dcard + .dcard{margin-top:22px}
+  /* visiting-company rows */
+  .visit{display:grid;grid-template-columns:1fr auto auto;gap:16px;align-items:center;padding:16px 0;border-top:1px solid var(--line)}
+  .visit:first-of-type{border-top:0;padding-top:2px}
+  .visit .vt{font-weight:600;font-size:15.5px}
+  .visit .vs{font-size:13px;color:var(--ink-3);margin-top:2px}
+  .vstatus{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;padding:3px 9px;border-radius:999px;white-space:nowrap}
+  .vstatus.open{color:var(--accent-text);background:var(--accent-wash)}
+  .vstatus.soon{color:#8a6100;background:rgba(138,97,0,.12)}
+  .vstatus.done{color:var(--ink-3);background:rgba(11,15,13,.06)}
+  .vprep{font-size:13.5px;font-weight:600;color:var(--accent-text)}
+  /* prep track tiles */
+  .tracks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+  .track{border:1px solid var(--line-2);border-radius:12px;padding:16px 16px;display:block;color:inherit;transition:border-color .15s,transform .15s}
+  .track:hover{border-color:var(--ink-3);transform:translateY(-2px)}
+  .track .tt{font-weight:600;font-size:15px}
+  .track .ts{font-size:12.5px;color:var(--ink-3);margin-top:4px}
+  .cnote{font-size:12.5px;color:var(--ink-3);margin-top:16px}
+  @media(max-width:860px){.cg-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-page="practice">
+  <nav class="site" data-nav></nav>
+
+  <main class="pg"><div class="wrap">
+
+    <a class="rv-back" href="questions.html" style="font-size:13.5px;color:var(--ink-2);display:inline-flex;gap:7px;margin-bottom:18px">&larr; Back to practice</a>
+
+    <div class="pg-head">
+      <span class="eyebrow">Practice &middot; Campus placements</span>
+      <h1>Your placement portal.</h1>
+      <div class="campline">
+        <span class="season">Placement Season 2026</span>
+        <span class="dot"></span>
+        <span><b>Plaksha University</b></span>
+        <span class="dot"></span>
+        <span>12 companies expected this season</span>
+      </div>
+    </div>
+
+    <div class="cg-grid">
+
+      <!-- LEFT: who is visiting -->
+      <div class="cg-main">
+        <div class="dcard">
+          <div class="dc-head">
+            <h2>Companies visiting this season</h2>
+            <span class="muted" style="font-size:12.5px">Updated weekly</span>
+          </div>
+
+          <div class="visit">
+            <div><div class="vt">Amazon</div><div class="vs">SDE-1 &middot; On-campus &middot; 6 Oct 2026</div></div>
+            <span class="vstatus open">Applications open</span>
+            <a class="vprep" href="company-prep.html">Prepare &rarr;</a>
+          </div>
+          <div class="visit">
+            <div><div class="vt">Razorpay</div><div class="vs">Backend Engineer &middot; On-campus &middot; 11 Oct 2026</div></div>
+            <span class="vstatus open">Applications open</span>
+            <a class="vprep" href="company-prep.html">Prepare &rarr;</a>
+          </div>
+          <div class="visit">
+            <div><div class="vt">Flipkart</div><div class="vs">SDE-1 &middot; Pre-placement talk &middot; 18 Oct 2026</div></div>
+            <span class="vstatus soon">Coming up</span>
+            <a class="vprep" href="company-prep.html">Prepare &rarr;</a>
+          </div>
+          <div class="visit">
+            <div><div class="vt">Microsoft</div><div class="vs">SWE &middot; On-campus &middot; 25 Oct 2026</div></div>
+            <span class="vstatus soon">Coming up</span>
+            <a class="vprep" href="company-prep.html">Prepare &rarr;</a>
+          </div>
+          <div class="visit">
+            <div><div class="vt">Zerodha</div><div class="vs">Developer &middot; On-campus &middot; Applications closed</div></div>
+            <span class="vstatus done">Interviewing</span>
+            <a class="vprep" href="company-prep.html">Prepare &rarr;</a>
+          </div>
+
+          <p class="cnote">Sample schedule. Campus prep is rolling out through the pilot &mdash; get your college added below so this fills with your real drive.</p>
+        </div>
+
+        <!-- prep tracks -->
+        <div class="dcard" style="margin-top:22px">
+          <div class="dc-head"><h2>Placement prep tracks</h2></div>
+          <div class="tracks">
+            <a class="track" href="questions.html"><div class="tt">DSA rounds</div><div class="ts">The coding round most drives open with</div></a>
+            <a class="track" href="questions.html"><div class="tt">Aptitude &amp; logic</div><div class="ts">Quant, reasoning, verbal timed sets</div></a>
+            <a class="track" href="questions.html"><div class="tt">Core CS</div><div class="ts">OS, DBMS, networks, OOP recall</div></a>
+            <a class="track" href="questions.html"><div class="tt">HR &amp; behavioural</div><div class="ts">Talk through the classic questions with Maya</div></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: your campus + waitlist -->
+      <div class="cg-side">
+        <div class="dcard">
+          <div class="dc-head"><h2>Your season</h2></div>
+          <div class="drow" style="grid-template-columns:1fr auto;border-top:0;padding-top:2px">
+            <div><div class="rt">Drives open</div><div class="rs">Accepting applications now</div></div>
+            <span class="scorepill">2</span>
+          </div>
+          <div class="drow" style="grid-template-columns:1fr auto">
+            <div><div class="rt">Coming up</div><div class="rs">Talks &amp; drives scheduled</div></div>
+            <span class="scorepill">2</span>
+          </div>
+          <div class="drow" style="grid-template-columns:1fr auto">
+            <div><div class="rt">Practice sessions</div><div class="rs">You've done this season</div></div>
+            <span class="scorepill">7</span>
+          </div>
+        </div>
+
+        <div class="dcard">
+          <div class="dc-head"><h2>Not your college?</h2></div>
+          <p class="soft" style="font-size:14.5px;line-height:1.5">Tell us where you study and we'll bring your campus drive and your seniors' questions into the portal.</p>
+          <form class="wl" id="wlform" style="margin-top:16px">
+            <input type="email" id="wlemail" placeholder="you@college.edu" aria-label="College email" required>
+            <button class="btn btn-green" type="submit">Add my campus</button>
+          </form>
+          <p class="wl-note" id="wlnote">We'll email you when your college goes live.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div></main>
+
+  <script>
+    // Guard: only a logged-in candidate can see this page.
+    (function(){ try{ var s=JSON.parse(localStorage.getItem("sviam_demo")||"null"); if(!s||s.role!=="candidate"){ location.href="signin.html"; } }catch(e){ location.href="signin.html"; } })();
+  </script>
+  <script src="site.js"></script>
+  <script>
+    var wl = document.getElementById("wlform");
+    if (wl) wl.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var em = (document.getElementById("wlemail") || {}).value || "";
+      window.location.href = "mailto:vikas.kumar@sviam.in?subject=" +
+        encodeURIComponent("Add my campus to SViam") + "&body=" +
+        encodeURIComponent("Please add my college to the campus placement portal. College email: " + em);
+      var n = document.getElementById("wlnote");
+      if (n) n.textContent = "Opening your email to confirm. We'll be in touch.";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Practice &middot; SViam</title>
+<link rel="stylesheet" href="site.css" />
+<style>
+  .pg{padding:100px 0 90px}
+  .pg-head{margin-bottom:30px}
+  .pg-head h1{font-size:clamp(26px,3vw,34px)}
+  .pg-head p{color:var(--ink-2);margin-top:8px;font-size:16.5px;max-width:60ch}
+
+  /* tailor-to-a-job card */
+  .tailor{margin-bottom:26px}
+  .tailor > .soft{font-size:15.5px;line-height:1.5;max-width:70ch;margin-bottom:20px}
+  .tailor .tabs{margin-bottom:16px}
+  .tl-field label{display:block;font-size:13px;font-weight:600;color:var(--ink-2);margin-bottom:8px}
+  .tailor textarea,.tailor input[type=url]{width:100%;font-family:inherit;font-size:14.5px;color:var(--ink);background:var(--surface);border:1px solid var(--line-2);border-radius:10px;padding:12px 14px;line-height:1.5}
+  .tailor textarea{min-height:104px;resize:vertical}
+  .tailor textarea:focus,.tailor input[type=url]:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-wash)}
+  .tl-resume{margin-top:18px}
+  .resume-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .resume-row input[type=file]{font-family:inherit;font-size:13.5px;color:var(--ink-2)}
+  .resume-row input[type=file]::file-selector-button{font-family:inherit;font-size:13.5px;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--line-2);border-radius:9px;padding:8px 14px;margin-right:12px;cursor:pointer}
+  .resume-row .or{font-size:13px;color:var(--ink-3)}
+  .chip-btn{font-family:inherit;font-size:13.5px;font-weight:600;color:var(--accent-text);background:var(--accent-wash);border:0;border-radius:9px;padding:9px 14px;cursor:pointer}
+  .tl-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:22px}
+  .tl-note{font-size:12.5px;color:var(--ink-3)}
+  /* tailored result */
+  .tl-out{margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
+  .tl-out .tl-role{font-size:13px;color:var(--ink-3)}
+  .tl-out .tl-role b{color:var(--ink);font-weight:600;font-size:16px}
+  .tl-focus{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px}
+  .tl-tag{font-size:12.5px;font-weight:600;color:var(--accent-text);background:var(--accent-wash);border-radius:999px;padding:5px 12px}
+  .tl-tag.gap{color:#8a6100;background:rgba(138,97,0,.12)}
+  .tl-set{margin-top:18px}
+  .pg .ptiles{margin-top:26px}
+  @media(max-width:860px){.tailor textarea{min-height:120px}}
+</style>
+</head>
+<body data-page="practice">
+  <nav class="site" data-nav></nav>
+
+  <main class="pg"><div class="wrap">
+
+    <div class="pg-head">
+      <span class="eyebrow">Practice</span>
+      <h1>Pick your next interview.</h1>
+      <p>Tailor a session to a specific job, drill a company or campus set, or choose any question from the bank. You talk and code it through with Maya, then replay it.</p>
+    </div>
+
+    <!-- TAILOR TO A JOB (JD + resume) -->
+    <div class="dcard tailor" id="tailor">
+      <div class="dc-head">
+        <h2>Practise for a specific job</h2>
+        <span class="chip chip-av">Live</span>
+      </div>
+      <p class="soft">Paste the job description (or its link) and add your resume. Maya builds the interview around that exact role &mdash; the stack it names, and the gaps between what it asks for and what your resume shows.</p>
+
+      <div data-tabs>
+        <div class="tabs">
+          <button class="tab-btn active" type="button">Paste JD</button>
+          <button class="tab-btn" type="button">JD from URL</button>
+        </div>
+        <div class="tab-panel active">
+          <div class="tl-field">
+            <label for="jdText">Job description</label>
+            <textarea id="jdText" placeholder="Paste the full job description here — responsibilities, required stack, must-haves..."></textarea>
+          </div>
+        </div>
+        <div class="tab-panel">
+          <div class="tl-field">
+            <label for="jdUrl">Link to the job posting</label>
+            <input id="jdUrl" type="url" placeholder="https://company.com/careers/backend-engineer" />
+            <p class="tl-note" style="margin-top:8px">We read the public posting at that link.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-resume">
+        <label style="display:block;font-size:13px;font-weight:600;color:var(--ink-2);margin-bottom:10px">Your resume</label>
+        <div class="resume-row">
+          <input id="resumeFile" type="file" accept=".pdf,.doc,.docx" aria-label="Upload your resume" />
+          <span class="or">or</span>
+          <button class="chip-btn" type="button" id="useSaved">Use my saved resume</button>
+        </div>
+      </div>
+
+      <div class="tl-actions">
+        <button class="btn btn-green btn-lg" type="button" id="tailorGo">Tailor my interview &rarr;</button>
+        <span class="tl-note">Maya focuses the questions on this role and probes where your resume is thin.</span>
+      </div>
+
+      <!-- result (revealed on submit) -->
+      <div class="tl-out" id="tailorOut" hidden>
+        <p class="tl-role">Interview tailored for <b id="tlRoleName">Backend Engineer</b> &middot; based on your JD and resume</p>
+        <div class="tl-focus">
+          <span class="tl-tag">Python / FastAPI</span>
+          <span class="tl-tag">System design</span>
+          <span class="tl-tag">SQL &amp; indexing</span>
+          <span class="tl-tag gap">Gap: distributed caching</span>
+          <span class="tl-tag gap">Gap: message queues</span>
+        </div>
+        <p class="tl-note" style="margin-top:10px">Green = strengths to confirm. Amber = gaps between the JD and your resume that Maya will probe.</p>
+        <div class="tl-set">
+          <div class="qtable">
+            <a class="qr" href="session-review.html" style="cursor:pointer"><span class="qd Medium">Medium</span><span class="qt">Design a rate limiter</span><span class="qtopic">System design</span><span class="qtime">35 min</span><span class="qprobe">from the JD's scale line</span><span class="qgo">Start &rarr;</span></a>
+            <a class="qr" href="session-review.html" style="cursor:pointer"><span class="qd Medium">Medium</span><span class="qt">LRU Cache</span><span class="qtopic">Design</span><span class="qtime">35 min</span><span class="qprobe">gap: caching</span><span class="qgo">Start &rarr;</span></a>
+            <a class="qr" href="session-review.html" style="cursor:pointer"><span class="qd Medium">Medium</span><span class="qt">Slow query, find the index</span><span class="qtopic">SQL</span><span class="qtime">25 min</span><span class="qprobe">JD asks for SQL depth</span><span class="qgo">Start &rarr;</span></a>
+          </div>
+        </div>
+        <a class="btn btn-green btn-lg" href="session-review.html" style="margin-top:20px">Start the tailored interview &rarr;</a>
+        <p class="tl-note" style="margin-top:14px">Preview uses sample analysis. Your JD and resume are used only to shape your interview.</p>
+      </div>
+    </div>
+
+    <!-- COMPANY / CAMPUS PORTALS -->
+    <div class="ptiles">
+      <a class="ptile" href="company-prep.html">
+        <div class="pt-h"><span class="pt-k">By company</span></div>
+        <h3>Interview in each company's style.</h3>
+        <p>Drill the exact patterns your target teams lean on, company by company.</p>
+        <span class="pt-go">Open company prep &rarr;</span>
+      </a>
+      <a class="ptile" href="campus-prep.html">
+        <div class="pt-h"><span class="pt-k">By campus</span><span class="chip chip-soon">Placement season</span></div>
+        <h3>Your campus placement portal.</h3>
+        <p>See which companies are coming to your campus this season and prepare for each.</p>
+        <span class="pt-go">Open campus portal &rarr;</span>
+      </a>
+    </div>
+
+    <!-- QUESTION BANK -->
+    <div class="dash-head" style="margin-top:44px;margin-bottom:20px">
+      <div>
+        <span class="eyebrow">Question bank</span>
+        <h1 style="font-size:clamp(22px,2.4vw,28px)">Or pick any question.</h1>
+      </div>
+    </div>
+    <div class="qbar">
+      <input class="qsearch" id="qsearch" type="text" placeholder="Search questions" aria-label="Search questions" />
+      <div class="qchips">
+        <button class="qchip active" data-topic="All">All topics</button>
+        <button class="qchip" data-topic="Arrays">Arrays</button>
+        <button class="qchip" data-topic="Stacks">Stacks</button>
+        <button class="qchip" data-topic="Linked List">Linked List</button>
+        <button class="qchip" data-topic="Trees">Trees</button>
+        <button class="qchip" data-topic="Graphs">Graphs</button>
+        <button class="qchip" data-topic="Design">Design</button>
+        <button class="qchip" data-topic="DP">DP</button>
+      </div>
+      <div class="qchips">
+        <button class="qchip active" data-diff="All">All</button>
+        <button class="qchip" data-diff="Easy">Easy</button>
+        <button class="qchip" data-diff="Medium">Medium</button>
+        <button class="qchip" data-diff="Hard">Hard</button>
+      </div>
+    </div>
+    <div class="qtable" id="qtable">
+      <a class="qr" href="session-review.html" data-title="two sum" data-topickey="Arrays" data-diffkey="Easy"><span class="qd Easy">Easy</span><span class="qt">Two Sum</span><span class="qtopic">Arrays &amp; Hashing</span><span class="qtime">20 min</span><span class="qprobe">your data-structure choice</span><span class="qgo">Start &rarr;</span></a>
+      <a class="qr" href="session-review.html" data-title="best time to buy and sell stock" data-topickey="Arrays" data-diffkey="Easy"><span class="qd Easy">Easy</span><span class="qt">Best Time to Buy &amp; Sell Stock</span><span class="qtopic">Arrays</span><span class="qtime">20 min</span><span class="qprobe">the single-pass insight</span><span class="qgo">Start &rarr;</span></a>
+      <a class="qr" href="session-review.html" data-title="valid parentheses" data-topickey="Stacks" data-diffkey="Easy"><span class="qd Easy">Easy</span><span class="qt">Valid Parentheses</span><span class="qtopic">Stacks</span><span class="qtime">20 min</span><span class="qprobe">the stack invariant</span><span class="qgo">Start &rarr;</span></a>
+      <a class="qr" href="session-review.html" data-title="merge two sorted lists" data-topickey="Linked List" data-diffkey="Easy"><span class="qd Easy">Easy</span><span class="qt">Merge Two Sorted Lists</span><span class="qtopic">Linked List</span><span class="qtime">25 min</span><span class="qprobe">pointer bookkeeping</span><span class="qgo">Start &rarr;</span></a>
+      <a class="qr" href="session-review.html" data-title="merge intervals" data-topickey="Arrays" data-diffkey="Medium"><span class="qd Medium">Medium</span><span class="qt">Merge Intervals</span><span class="qtopic">Intervals</span><span class="qtime">30 min</span><span class="qprobe">the overlap edge cases</span><span class="qgo">Start &rarr;</span></a>
+      <a class="qr" href="session-review.html" data-title="group anagrams" data-topickey="Arrays" data-diffkey="Medium"><span class="qd Medium">Medium</span><span class="qt">Group Anagrams</span><span class="qtopic">Arrays &amp; Hashing</span><span class="qtime">25 min</span><span class="qprobe">your hashing key</span><span class="qgo">Start &rarr;</span></a>
+      <a class="qr" href="session-review.html" data-title="min stack" data-topickey="Stacks" data-diffkey="Medium"><span class="qd Medium">Medium</span><span class="qt">Min Stack</span><span class="qtopic">Stacks</span><span class="qtime">25 min</span><span class="qprobe">O(1) minimum</span><span class="qgo">Start &rarr;</span></a>
+      <a class="qr" href="session-review.html" data-title="lru cache" data-topickey="Design" data-diffkey="Medium"><span class="qd Medium">Medium</span><span class="qt">LRU Cache</span><span class="qtopic">Design</span><span class="qtime">35 min</span><span class="qprobe">your data-structure choice</span><span class="qgo">Start &rarr;</span></a>
+      <a class="qr" href="session-review.html" data-title="course schedule" data-topickey="Graphs" data-diffkey="Medium"><span class="qd Medium">Medium</span><span class="qt">Course Schedule</span><span class="qtopic">Graphs</span><span class="qtime">35 min</span><span class="qprobe">cycle detection</span><span class="qgo">Start &rarr;</span></a>
+      <a class="qr" href="session-review.html" data-title="number of islands" data-topickey="Graphs" data-diffkey="Medium"><span class="qd Medium">Medium</span><span class="qt">Number of Islands</span><span class="qtopic">Graphs / DFS</span><span class="qtime">30 min</span><span class="qprobe">flood-fill boundaries</span><span class="qgo">Start &rarr;</span></a>
+      <a class="qr" href="session-review.html" data-title="validate binary search tree" data-topickey="Trees" data-diffkey="Medium"><span class="qd Medium">Medium</span><span class="qt">Validate BST</span><span class="qtopic">Trees</span><span class="qtime">30 min</span><span class="qprobe">the bounds argument</span><span class="qgo">Start &rarr;</span></a>
+      <a class="qr" href="session-review.html" data-title="coin change" data-topickey="DP" data-diffkey="Medium"><span class="qd Medium">Medium</span><span class="qt">Coin Change</span><span class="qtopic">Dynamic Programming</span><span class="qtime">35 min</span><span class="qprobe">state &amp; transition</span><span class="qgo">Start &rarr;</span></a>
+      <a class="qr" href="session-review.html" data-title="word ladder" data-topickey="Graphs" data-diffkey="Hard"><span class="qd Hard">Hard</span><span class="qt">Word Ladder</span><span class="qtopic">Graphs / BFS</span><span class="qtime">45 min</span><span class="qprobe">why BFS wins here</span><span class="qgo">Start &rarr;</span></a>
+      <a class="qr" href="session-review.html" data-title="serialize and deserialize binary tree" data-topickey="Trees" data-diffkey="Hard"><span class="qd Hard">Hard</span><span class="qt">Serialize &amp; Deserialize Binary Tree</span><span class="qtopic">Trees</span><span class="qtime">45 min</span><span class="qprobe">your encoding choice</span><span class="qgo">Start &rarr;</span></a>
+      <div class="qempty" id="qempty" style="display:none">No questions match those filters.</div>
+    </div>
+    <p class="qfoot">The bank keeps growing every week.</p>
+
+  </div></main>
+
+  <script>
+    // Guard: only a logged-in candidate can see this page.
+    (function(){ try{ var s=JSON.parse(localStorage.getItem("sviam_demo")||"null"); if(!s||s.role!=="candidate"){ location.href="signin.html"; } }catch(e){ location.href="signin.html"; } })();
+  </script>
+  <script src="site.js"></script>
+  <script>
+    // Tailor-to-a-job: front-end demo. Reveals a sample tailored set and
+    // pulls a role name from the pasted JD so it feels responsive.
+    (function () {
+      var go = document.getElementById("tailorGo");
+      var out = document.getElementById("tailorOut");
+      var roleEl = document.getElementById("tlRoleName");
+      var saved = document.getElementById("useSaved");
+      var fileInput = document.getElementById("resumeFile");
+      if (saved) saved.addEventListener("click", function () {
+        saved.textContent = "Saved resume attached ✓";
+        saved.style.cursor = "default";
+      });
+      function guessRole(text) {
+        var t = (text || "").toLowerCase();
+        var roles = [
+          ["frontend", "Frontend Engineer"], ["front-end", "Frontend Engineer"],
+          ["backend", "Backend Engineer"], ["back-end", "Backend Engineer"],
+          ["full stack", "Full-Stack Engineer"], ["fullstack", "Full-Stack Engineer"],
+          ["machine learning", "ML Engineer"], ["ml engineer", "ML Engineer"],
+          ["data engineer", "Data Engineer"], ["data scientist", "Data Scientist"],
+          ["devops", "DevOps Engineer"], ["sre", "Site Reliability Engineer"],
+          ["mobile", "Mobile Engineer"], ["android", "Android Engineer"], ["ios", "iOS Engineer"]
+        ];
+        for (var i = 0; i < roles.length; i++) if (t.indexOf(roles[i][0]) > -1) return roles[i][1];
+        return "Software Engineer";
+      }
+      if (go) go.addEventListener("click", function () {
+        var jd = (document.getElementById("jdText") || {}).value || "";
+        var url = (document.getElementById("jdUrl") || {}).value || "";
+        if (roleEl) roleEl.textContent = guessRole(jd || url);
+        if (out) { out.hidden = false; out.scrollIntoView({ behavior: "smooth", block: "nearest" }); }
+      });
+    })();
+  </script>
+</body>
+</html>

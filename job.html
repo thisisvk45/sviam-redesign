@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Backend Engineer &middot; Hiring &middot; SViam</title>
+<link rel="stylesheet" href="site.css" />
+<style>
+  .jb{padding:100px 0 90px}
+  .jb-back{font-size:13.5px;color:var(--ink-2);display:inline-flex;align-items:center;gap:7px;margin-bottom:18px}
+  .jb-back:hover{color:var(--ink)}
+  .jb-top{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:8px}
+  .jb-title h1{font-size:clamp(26px,3vw,34px)}
+  .jb-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px;font-size:13.5px;color:var(--ink-3)}
+  .jb-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--line-2)}
+  .jb-open{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--accent-text);background:var(--accent-wash);border-radius:999px;padding:3px 10px}
+  /* hiring funnel: labelled hairline rows with proportional bars */
+  .funnel{display:grid;gap:14px}
+  .frow{display:grid;grid-template-columns:150px 1fr 54px;gap:16px;align-items:center}
+  .frow .fl{font-size:14px;color:var(--ink)}
+  .frow .fl small{display:block;font-size:12px;color:var(--ink-3)}
+  .fbar{height:10px;background:var(--accent-wash);border-radius:999px;overflow:hidden}
+  .fbar > span{display:block;height:100%;background:var(--accent);border-radius:999px}
+  .fbar.soft > span{background:var(--line-2)}
+  .frow .fn{font-family:var(--mono);font-size:15px;font-weight:600;text-align:right}
+  .jb-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:22px;margin-top:22px;align-items:start}
+  .jb-side .dcard + .dcard{margin-top:22px}
+  @media(max-width:860px){.jb-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-page="jobs">
+  <nav class="site" data-nav></nav>
+
+  <main class="jb"><div class="wrap">
+
+    <a class="jb-back" href="app-company.html#jobs">&larr; Back to all jobs</a>
+
+    <div class="jb-top">
+      <div class="jb-title">
+        <span class="eyebrow">Hiring &middot; Pilot</span>
+        <h1>Backend Engineer</h1>
+        <div class="jb-meta">
+          <span class="jb-open">Open</span>
+          <span class="dot"></span>
+          <span>Campus Drive 2026 &middot; Plaksha University</span>
+          <span class="dot"></span>
+          <span>Full-time &middot; Bengaluru / Remote</span>
+        </div>
+      </div>
+      <a class="btn btn-outline" href="#">Edit job</a>
+    </div>
+
+    <!-- stats -->
+    <div class="stat-row" style="margin-top:26px">
+      <div class="stat"><div class="n">128</div><div class="l">Applications received</div></div>
+      <div class="stat"><div class="n">40</div><div class="l">Interview invites sent</div></div>
+      <div class="stat"><div class="n">12</div><div class="l">Completed the interview</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">Awaiting your review</div></div>
+    </div>
+
+    <div class="jb-grid">
+
+      <!-- LEFT: who to review -->
+      <div class="jb-main">
+        <div class="dcard" id="candidates">
+          <div class="dc-head">
+            <h2>Interviewed candidates</h2>
+            <span class="muted" style="font-size:12.5px">12 completed</span>
+          </div>
+
+          <div class="drow" style="grid-template-columns:1fr auto auto auto">
+            <div><div class="rt">Candidate A</div><div class="rs">Invited 18 Sep &middot; Interviewed 22 Sep</div></div>
+            <span class="scorepill">84</span>
+            <span class="needchip clean">Clean</span>
+            <a class="arrow-link" href="#"><span class="go" style="color:var(--accent-text);font-weight:600;font-size:14px">Review <span class="ar">&rarr;</span></span></a>
+          </div>
+          <div class="drow" style="grid-template-columns:1fr auto auto auto">
+            <div><div class="rt">Candidate B</div><div class="rs">Invited 18 Sep &middot; Interviewed 23 Sep</div></div>
+            <span class="scorepill">79</span>
+            <span class="needchip flag">Overlay detected</span>
+            <a class="arrow-link" href="#"><span class="go" style="color:var(--accent-text);font-weight:600;font-size:14px">Review <span class="ar">&rarr;</span></span></a>
+          </div>
+          <div class="drow" style="grid-template-columns:1fr auto auto auto">
+            <div><div class="rt">Candidate C</div><div class="rs">Invited 18 Sep &middot; Interviewed 23 Sep</div></div>
+            <span class="scorepill">76</span>
+            <span class="needchip clean">Clean</span>
+            <a class="arrow-link" href="#"><span class="go" style="color:var(--accent-text);font-weight:600;font-size:14px">Review <span class="ar">&rarr;</span></span></a>
+          </div>
+          <div class="drow" style="grid-template-columns:1fr auto auto auto">
+            <div><div class="rt">Candidate D</div><div class="rs">Invited 19 Sep &middot; Interviewed 24 Sep</div></div>
+            <span class="scorepill">71</span>
+            <span class="needchip clean">Clean</span>
+            <a class="arrow-link" href="#"><span class="go" style="color:var(--accent-text);font-weight:600;font-size:14px">Review <span class="ar">&rarr;</span></span></a>
+          </div>
+          <div class="drow" style="grid-template-columns:1fr auto auto auto">
+            <div><div class="rt">Candidate E</div><div class="rs">Invited 19 Sep &middot; Interviewed 25 Sep</div></div>
+            <span class="scorepill">68</span>
+            <span class="needchip review">Needs a look</span>
+            <a class="arrow-link" href="#"><span class="go" style="color:var(--accent-text);font-weight:600;font-size:14px">Review <span class="ar">&rarr;</span></span></a>
+          </div>
+
+          <p class="muted" style="font-size:12.5px;margin-top:16px">Sample data. Scores are illustrative and support your team's decision &mdash; Maya does not decide who is hired.</p>
+        </div>
+
+        <!-- what each review contains -->
+        <div class="dcard" style="margin-top:22px">
+          <div class="dc-head">
+            <h2>What each review gives you</h2>
+            <a href="companies.html">How it works</a>
+          </div>
+          <div class="drow" style="grid-template-columns:1fr 1fr 1fr;border-top:0;padding-top:2px">
+            <div><div class="rt">Transcript</div><div class="rs">How they reasoned, in their words</div></div>
+            <div><div class="rt">Code replay</div><div class="rs">The code as it was written</div></div>
+            <div><div class="rt">Scorecard</div><div class="rs">Signals tied to the moment</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: funnel + integrity -->
+      <div class="jb-side">
+        <div class="dcard">
+          <div class="dc-head"><h2>This drive</h2></div>
+          <div class="funnel">
+            <div class="frow"><div class="fl">Applied<small>Resumes received</small></div><div class="fbar soft"><span style="width:100%"></span></div><div class="fn">128</div></div>
+            <div class="frow"><div class="fl">Invited<small>Sent an interview link</small></div><div class="fbar"><span style="width:31%"></span></div><div class="fn">40</div></div>
+            <div class="frow"><div class="fl">Interviewed<small>Completed with Maya</small></div><div class="fbar"><span style="width:9.4%"></span></div><div class="fn">12</div></div>
+            <div class="frow"><div class="fl">Shortlisted<small>Advanced by your team</small></div><div class="fbar"><span style="width:3.9%"></span></div><div class="fn">5</div></div>
+          </div>
+          <p class="tp-note" style="font-size:12.5px;color:var(--ink-3);margin-top:16px">Bars are proportional to applications received. Sample numbers.</p>
+        </div>
+
+        <div class="dcard">
+          <div class="dc-head"><h2>Interview feedback</h2></div>
+          <div class="bar-row" style="margin-top:4px"><div class="bl"><b>Problem solving</b><span class="v">avg 74</span></div><div class="bar"><span style="width:74%"></span></div></div>
+          <div class="bar-row"><div class="bl"><b>Code quality</b><span class="v">avg 71</span></div><div class="bar"><span style="width:71%"></span></div></div>
+          <div class="bar-row"><div class="bl"><b>Communication</b><span class="v">avg 77</span></div><div class="bar"><span style="width:77%"></span></div></div>
+          <p class="tp-note" style="font-size:12.5px;color:var(--ink-3);margin-top:6px">Averaged across 12 completed interviews. Illustrative.</p>
+        </div>
+
+        <div class="dcard">
+          <div class="dc-head">
+            <h2>Integrity</h2>
+            <span class="chip chip-soon">In development</span>
+          </div>
+          <div class="drow" style="grid-template-columns:1fr auto;border-top:0;padding-top:2px">
+            <div><div class="rt">Answer overlay</div><div class="rs">Cluely / ParakeetAI-style</div></div>
+            <span class="needchip flag">1 flagged</span>
+          </div>
+          <div class="drow" style="grid-template-columns:1fr auto">
+            <div><div class="rt">Second-screen lookups</div><div class="rs">Tab &amp; focus signals</div></div>
+            <span class="needchip clean">0 flagged</span>
+          </div>
+          <p class="tp-note" style="font-size:12.5px;color:var(--ink-3);margin-top:14px">Live detection is rolling out through the pilot and is still in the making. We do not publish accuracy numbers yet.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div></main>
+
+  <script>
+    // Guard: only a logged-in company can see this page.
+    (function(){ try{ var s=JSON.parse(localStorage.getItem("sviam_demo")||"null"); if(!s||s.role!=="company"){ location.href="signin.html"; } }catch(e){ location.href="signin.html"; } })();
+  </script>
+  <script src="site.js"></script>
+</body>
+</html>

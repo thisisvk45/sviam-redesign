@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sign in — SViam</title>
+<meta name="description" content="Sign in to SViam." />
+<link rel="stylesheet" href="site.css" />
+<style>
+  /* Auth layout only — the shared css has no auth form styles */
+  .auth{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:108px 24px 64px}
+  .auth-card{width:100%;max-width:420px}
+  .auth-head{text-align:center;margin-bottom:28px}
+  .auth-head h1{font-size:30px;letter-spacing:-.03em}
+  .auth-head p{color:var(--ink-2);font-size:15.5px;margin-top:10px}
+  .auth-card .btn-full{width:100%;justify-content:center}
+  .auth-or{display:flex;align-items:center;gap:14px;margin:22px 0;color:var(--ink-3);font-size:12px;font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase}
+  .auth-or::before,.auth-or::after{content:"";flex:1;height:1px;background:var(--line)}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:7px}
+  .field input{width:100%;font-family:inherit;font-size:15px;color:var(--ink);background:var(--surface);border:1px solid var(--line-2);border-radius:10px;padding:12px 14px;transition:border-color .15s,box-shadow .15s}
+  .field input::placeholder{color:var(--ink-3)}
+  .field input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-wash)}
+  .field-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px}
+  .field-row label{margin-bottom:0}
+  .field-row a{font-size:13.5px;color:var(--accent);font-weight:600}
+  .field-row a:hover{color:var(--accent-press)}
+  .auth-note{margin-top:18px;font-size:13.5px;color:var(--ink-2);background:var(--accent-wash);border:1px solid var(--line);border-radius:10px;padding:12px 14px;line-height:1.5}
+  .auth-alt{text-align:center;margin-top:24px;font-size:14.5px;color:var(--ink-2)}
+  .auth-alt a{color:var(--accent);font-weight:600}
+  .auth-alt a:hover{color:var(--accent-press)}
+  .gicon{width:18px;height:18px;flex:none}
+</style>
+</head>
+<body data-page="">
+  <nav class="site" data-nav></nav>
+
+  <main class="auth">
+    <div class="auth-card">
+      <div class="auth-head">
+        <h1>Sign in</h1>
+        <p>Welcome back. Continue your interview practice.</p>
+      </div>
+
+      <button type="button" class="btn btn-outline btn-full" id="googleBtn">
+        <svg class="gicon" viewBox="0 0 18 18" aria-hidden="true"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92c1.7-1.57 2.68-3.88 2.68-6.62Z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.8.54-1.84.86-3.04.86-2.34 0-4.32-1.58-5.03-3.7H.96v2.33A9 9 0 0 0 9 18Z"/><path fill="#FBBC05" d="M3.97 10.72a5.4 5.4 0 0 1 0-3.44V4.95H.96a9 9 0 0 0 0 8.1l3.01-2.33Z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.5.46 3.44 1.35l2.58-2.58C13.46.9 11.43 0 9 0A9 9 0 0 0 .96 4.95l3.01 2.33C4.68 5.16 6.66 3.58 9 3.58Z"/></svg>
+        Continue with Google
+      </button>
+
+      <div class="auth-or">or</div>
+
+      <form id="signinForm" novalidate>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="you@company.com" required />
+        </div>
+        <div class="field">
+          <div class="field-row">
+            <label for="password">Password</label>
+            <a href="#" id="forgot">Forgot password?</a>
+          </div>
+          <input type="password" id="password" name="password" autocomplete="current-password" placeholder="Your password" required />
+        </div>
+        <button type="submit" class="btn btn-green btn-full">Sign in</button>
+      </form>
+
+      <p class="auth-note" id="note" hidden role="status">That did not match a demo login. Use one of the demo accounts below.</p>
+
+      <div class="auth-note" style="background:var(--surface)">
+        <b>Demo logins</b> (try both to see each view)<br>
+        Candidate: <span class="mono">candidate@sviam.in</span> / <span class="mono">demo123</span><br>
+        Company: <span class="mono">company@sviam.in</span> / <span class="mono">demo123</span>
+      </div>
+
+      <p class="auth-alt">New here? <a href="register.html">Create an account</a></p>
+    </div>
+  </main>
+
+  <footer class="site" data-foot></footer>
+  <script src="site.js"></script>
+  <script>
+    (function () {
+      var note = document.getElementById("note");
+      function showNote() { if (note) note.hidden = false; }
+      // Local demo accounts route to the two workspaces (front-end preview only).
+      var ACCOUNTS = {
+        "candidate@sviam.in": { pw: "demo123", role: "candidate", name: "Shraddha Chaudhary", go: "app-candidate.html" },
+        "company@sviam.in": { pw: "demo123", role: "company", name: "SViam", go: "app-company.html" }
+      };
+      var form = document.getElementById("signinForm");
+      if (form) form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var email = (document.getElementById("email").value || "").trim().toLowerCase();
+        var pw = document.getElementById("password").value || "";
+        var acc = ACCOUNTS[email];
+        if (acc && acc.pw === pw) {
+          try {
+            localStorage.setItem("sviam_demo", JSON.stringify({ role: acc.role, name: acc.name, email: email }));
+          } catch (err) {}
+          window.location.href = acc.go;
+          return;
+        }
+        showNote();
+      });
+      var g = document.getElementById("googleBtn");
+      if (g) g.addEventListener("click", showNote);
+      var f = document.getElementById("forgot");
+      if (f) f.addEventListener("click", function (e) { e.preventDefault(); showNote(); });
+    })();
+  </script>
+</body>
+</html>

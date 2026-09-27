@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>For developers · SViam</title>
+<meta name="description" content="Walk into the technical interview ready. Talk and code through real questions with Maya, then practise the exact patterns your target companies and campus ask. Free to try." />
+<link rel="stylesheet" href="site.css" />
+</head>
+<body data-page="developers">
+  <nav class="site" data-nav></nav>
+
+  <!-- 1) HERO: split hero, static interview frame on the right -->
+  <header class="hero">
+    <div class="wrap grid12">
+      <div class="hero-copy">
+        <span class="kick"><span class="d"></span>For developers</span>
+        <h1 class="display hero-h1">Walk in ready.</h1>
+        <p class="lead">Sit the real interview before it counts. Talk and code through it with Maya, get an honest read on where you stand, and rehearse the exact questions your target companies and campus ask.</p>
+        <div class="cta">
+          <a class="btn btn-green btn-lg" href="signin.html">Start practising</a>
+          <a class="btn btn-outline btn-lg" href="pricing.html#developers">See pricing</a>
+        </div>
+        <p class="note"><b>Free to try.</b> Practice is live today.</p>
+      </div>
+      <div class="hero-visual">
+        <div class="frame">
+          <div class="frame-bar">
+            <span class="live"><span class="dot"></span>Live interview</span>
+            <span class="qchip">Two Sum &middot; Easy</span>
+            <span class="timer" style="margin-left:auto">12:04</span>
+          </div>
+          <div class="frame-body">
+            <div class="pane convo">
+              <div class="pane-label">Conversation</div>
+              <div class="msg maya"><div class="who">Maya</div><div class="bubble">Walk me through your approach first.</div></div>
+              <div class="msg you"><div class="who">You</div><div class="bubble">A hash map of what I have seen, so lookups are constant time.</div></div>
+              <div class="msg maya"><div class="who">Maya</div><div class="bubble">Good. Now return the indices when you find the match.</div></div>
+            </div>
+            <div class="code">
+              <span class="row"><span class="ln">1</span><span class="cm"># two sum</span></span>
+              <span class="row"><span class="ln">2</span><span class="kw">def</span> <span class="fn">two_sum</span>(nums, t):</span>
+              <span class="row"><span class="ln">3</span>&nbsp;&nbsp;seen = {}</span>
+              <span class="row"><span class="ln">4</span>&nbsp;&nbsp;<span class="kw">for</span> i, n <span class="kw">in</span> enumerate(nums):</span>
+              <span class="row"><span class="ln">5</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> t - n <span class="kw">in</span> seen:</span>
+              <span class="row"><span class="ln">6</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> [seen[t - n], i]</span>
+            </div>
+          </div>
+          <div class="signals">
+            <span class="sig-label">Signals</span>
+            <span class="sig on" data-sig="reasoning">Reasoning</span>
+            <span class="sig on" data-sig="edge">Edge cases</span>
+            <span class="sig on" data-sig="complexity">Complexity</span>
+          </div>
+          <div class="frame-foot">
+            <span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+            <span>Maya is listening.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2) PRACTISE BY COMPANY AND CAMPUS: the main feature, two big tiles -->
+  <section id="targeted"><div class="wrap">
+    <div style="max-width:62ch;margin-bottom:40px">
+      <h2>Practise by <span style="box-shadow:inset 0 -0.1em 0 var(--accent);padding-bottom:.02em">company</span> and <span style="box-shadow:inset 0 -0.1em 0 var(--accent);padding-bottom:.02em">campus</span>.</h2>
+      <p class="soft" style="font-size:17px;line-height:1.5;margin-top:14px">Every company interviews to its own pattern. Drill that exact pattern before you walk in, instead of grinding a random bank of problems.</p>
+    </div>
+    <div class="ptiles">
+      <div class="ptile" id="company">
+        <div class="pt-h"><span class="pt-k">By company</span></div>
+        <h3>Interview in the style each company asks.</h3>
+        <p>Pick a set and drill the questions that kind of team leans on, in the style it favours.</p>
+        <div class="qchips" style="margin-top:18px">
+          <button class="qchip active" type="button" data-cset="All">All</button>
+          <button class="qchip" type="button" data-cset="Big Tech">Big Tech</button>
+          <button class="qchip" type="button" data-cset="Fintech">Fintech</button>
+          <button class="qchip" type="button" data-cset="Startups">Startups</button>
+          <button class="qchip" type="button" data-cset="Service companies">Service companies</button>
+        </div>
+        <a class="pt-go" href="#library">Explore company sets &rarr;</a>
+        <p class="pt-note">Sets are modelled on public interview patterns. Not affiliated with the companies named.</p>
+      </div>
+      <div class="ptile" id="campus">
+        <div class="pt-h"><span class="pt-k">By campus</span><span class="chip chip-soon">Rolling out</span></div>
+        <h3>Placement season ready.</h3>
+        <p>The questions your seniors actually got, one college at a time. Aptitude, DSA, and the first-round pattern for the companies that visit yours.</p>
+        <form class="wl" id="wlform">
+          <input type="email" id="wlemail" placeholder="you@college.edu" aria-label="College email" required>
+          <button class="btn btn-green" type="submit">Join waitlist</button>
+        </form>
+        <p class="wl-note" id="wlnote">We will email you when campus prep opens for your college.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- 3) HOW IT WORKS: one horizontal row of 3, icons, no numbers -->
+  <section id="how" style="padding-bottom:52px"><div class="wrap">
+    <div class="split-head" style="margin-bottom:34px">
+      <h2>Three steps to your read.</h2>
+      <p class="sh-p">You solve a real problem the way you would in the room, and Maya stays with you through it.</p>
+    </div>
+    <div class="flow" style="--n:3">
+      <div class="flow-step">
+        <div class="flow-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M8 9h8M8 12.5h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h4>Pick a question</h4>
+        <p>Choose by topic, difficulty, company, or campus.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 8l-4 4 4 4M15 8l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>Talk and code with Maya</h4>
+        <p>Reason out loud in a live editor while Maya follows.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 4h9l4 4v12H6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 4v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 13.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>Get your scorecard</h4>
+        <p>Your strengths, your gaps, and what to practise next.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- 4) QUESTION LIBRARY: compact, first 6 real questions -->
+  <section id="library"><div class="wrap">
+    <div class="split-head">
+      <h2>Pick your next challenge.</h2>
+      <p class="sh-p">Interview-grade questions across arrays, stacks, graphs, trees, and design. Search or filter to find the one you want.</p>
+    </div>
+    <div class="qbar">
+      <input class="qsearch" id="qsearch" type="text" placeholder="Search questions" aria-label="Search questions" />
+      <div class="qchips">
+        <button class="qchip active" data-topic="All">All topics</button>
+        <button class="qchip" data-topic="Arrays">Arrays</button>
+        <button class="qchip" data-topic="Stacks">Stacks</button>
+        <button class="qchip" data-topic="Trees">Trees</button>
+        <button class="qchip" data-topic="Graphs">Graphs</button>
+        <button class="qchip" data-topic="Design">Design</button>
+      </div>
+      <div class="qchips">
+        <button class="qchip active" data-diff="All">All</button>
+        <button class="qchip" data-diff="Easy">Easy</button>
+        <button class="qchip" data-diff="Medium">Medium</button>
+        <button class="qchip" data-diff="Hard">Hard</button>
+      </div>
+    </div>
+    <div class="qtable" id="qtable">
+      <div class="qr" data-title="two sum" data-topickey="Arrays" data-diffkey="Easy"><span class="qd Easy">Easy</span><span class="qt">Two Sum</span><span class="qtopic">Arrays &amp; Hashing</span><span class="qtime">20 min</span><span class="qprobe">your data-structure choice</span><span class="qgo">Start &rarr;</span></div>
+      <div class="qr" data-title="valid parentheses" data-topickey="Stacks" data-diffkey="Easy"><span class="qd Easy">Easy</span><span class="qt">Valid Parentheses</span><span class="qtopic">Stacks</span><span class="qtime">20 min</span><span class="qprobe">the stack invariant</span><span class="qgo">Start &rarr;</span></div>
+      <div class="qr" data-title="merge intervals" data-topickey="Arrays" data-diffkey="Medium"><span class="qd Medium">Medium</span><span class="qt">Merge Intervals</span><span class="qtopic">Intervals</span><span class="qtime">30 min</span><span class="qprobe">the overlap edge cases</span><span class="qgo">Start &rarr;</span></div>
+      <div class="qr" data-title="lru cache" data-topickey="Design" data-diffkey="Medium"><span class="qd Medium">Medium</span><span class="qt">LRU Cache</span><span class="qtopic">Design</span><span class="qtime">35 min</span><span class="qprobe">your data-structure choice</span><span class="qgo">Start &rarr;</span></div>
+      <div class="qr" data-title="course schedule" data-topickey="Graphs" data-diffkey="Medium"><span class="qd Medium">Medium</span><span class="qt">Course Schedule</span><span class="qtopic">Graphs</span><span class="qtime">35 min</span><span class="qprobe">cycle detection</span><span class="qgo">Start &rarr;</span></div>
+      <div class="qr" data-title="word ladder" data-topickey="Graphs" data-diffkey="Hard"><span class="qd Hard">Hard</span><span class="qt">Word Ladder</span><span class="qtopic">Graphs / BFS</span><span class="qtime">45 min</span><span class="qprobe">why BFS wins here</span><span class="qgo">Start &rarr;</span></div>
+      <div class="qempty" id="qempty" style="display:none">No questions match those filters.</div>
+    </div>
+    <p class="qfoot">The bank keeps growing. <a href="signin.html">Browse the full bank &rarr;</a></p>
+  </div></section>
+
+  <!-- 5) LIVE FEEDBACK AND REPLAY: text left, visual right, progress in one line -->
+  <section id="replay"><div class="wrap">
+    <div class="tvrow">
+      <div class="tv-text">
+        <h3>Maya talks you through it. Then you replay it.</h3>
+        <p>Maya says the feedback out loud, in the moment, like a real interviewer sitting beside you. She catches the weak spot as it happens, so you hear it and fix it under pressure instead of reading a report later.</p>
+        <p style="margin-top:16px">When you finish, scrub back through the whole session: every line, every follow-up, every signal, exactly when it happened. Every session is saved, so you can watch your scores climb run after run.</p>
+      </div>
+      <div class="tv-visual">
+        <div class="voicefb">
+          <div class="voicefb-top">
+            <span class="play" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="who"><b>Maya</b><span>Spoken feedback</span></span>
+            <span class="vwave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="dur">0:14</span>
+          </div>
+          <p class="quote">"Strong instinct reaching for a hash map. Next time, <em>say the complexity out loud</em> before you write the loop, not after."</p>
+          <div class="powered"><img src="logos/elevenlabs.svg" alt="ElevenLabs"> Maya's voice, powered by ElevenLabs</div>
+        </div>
+        <div class="frame" style="margin-top:24px">
+          <div class="frame-bar">
+            <span class="live"><span class="dot"></span>Replay</span>
+            <span class="qchip">Two Sum &middot; Easy</span>
+            <span class="timer" style="margin-left:auto">08:41</span>
+          </div>
+          <div class="code">
+            <span class="row"><span class="ln">1</span><span class="cm"># two sum</span></span>
+            <span class="row"><span class="ln">2</span><span class="kw">def</span> <span class="fn">two_sum</span>(nums, t):</span>
+            <span class="row"><span class="ln">3</span>&nbsp;&nbsp;seen = {}</span>
+            <span class="row"><span class="ln">4</span>&nbsp;&nbsp;<span class="kw">for</span> i, n <span class="kw">in</span> enumerate(nums):</span>
+            <span class="row hl"><span class="ln">5</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> t - n <span class="kw">in</span> seen:</span>
+            <span class="row"><span class="ln">6</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> [seen[t - n], i]</span>
+          </div>
+          <div class="scrub" style="padding:14px 16px 4px"><div class="track"><span class="fill"></span><span class="mk" style="left:26%"></span><span class="mk" style="left:54%"></span><span class="mk" style="left:80%"></span></div><div class="lab"><span>00:00</span><span>reasoning &middot; edge cases &middot; complexity</span><span>08:41</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- CLOSING: one centered dark band -->
+  <section class="closing-dark"><div class="wrap">
+    <h2>Your first question is waiting.</h2>
+    <p>Free to try. When you want more, Pro is a one-time ₹499 for 10 interviews within 30 days.</p>
+    <div class="cta">
+      <a class="btn btn-green btn-lg" href="signin.html">Start practising</a>
+      <a class="btn btn-onwhite btn-lg" href="pricing.html#developers">See pricing</a>
+    </div>
+  </div></section>
+
+  <footer class="site" data-foot></footer>
+  <script src="site.js"></script>
+  <script>
+    var wl = document.getElementById("wlform");
+    if (wl) wl.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var em = (document.getElementById("wlemail") || {}).value || "";
+      window.location.href = "mailto:vikas.kumar@sviam.in?subject=" +
+        encodeURIComponent("Campus prep waitlist") + "&body=" +
+        encodeURIComponent("Please add me to the campus prep waitlist. College email: " + em);
+      var n = document.getElementById("wlnote");
+      if (n) n.textContent = "Opening your email to confirm. We will be in touch.";
+    });
+    // company set filter chips (visual grouping only)
+    document.querySelectorAll('.ptile#company .qchip').forEach(function (b) {
+      b.addEventListener('click', function () {
+        document.querySelectorAll('.ptile#company .qchip').forEach(function (x) { x.classList.remove('active'); });
+        b.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Practice &middot; SViam</title>
+<link rel="stylesheet" href="site.css" />
+</head>
+<body data-page="dashboard">
+  <nav class="site" data-nav></nav>
+
+  <main class="dash"><div class="wrap">
+
+    <!-- welcome + primary CTA -->
+    <div class="dash-head">
+      <div>
+        <span class="eyebrow">Interview practice</span>
+        <h1>Hi Shraddha, welcome back.</h1>
+        <p class="soft" style="margin-top:8px">Here is your dashboard. Pick up where you left off, or start a fresh session with Maya.</p>
+      </div>
+      <a class="btn btn-green btn-lg" href="questions.html">Start a session</a>
+    </div>
+
+    <!-- quick stats (illustrative demo numbers) -->
+    <div class="stat-row">
+      <div class="stat"><div class="n">12</div><div class="l">Sessions completed</div></div>
+      <div class="stat"><div class="n">76 <small>/100</small></div><div class="l">Average score</div></div>
+      <div class="stat"><div class="n">5 days</div><div class="l">Current streak</div></div>
+      <div class="stat"><div class="n">Pro</div><div class="l">Your plan</div></div>
+    </div>
+
+    <!-- recent sessions + progress -->
+    <div class="dgrid g2">
+
+      <!-- LEFT: recent sessions -->
+      <div class="dcard" id="history">
+        <div class="dc-head">
+          <h2>Recent sessions</h2>
+          <a href="questions.html">Practise more &rarr;</a>
+        </div>
+        <div class="drow" style="grid-template-columns:1fr auto auto">
+          <div><div class="rt">Two Sum</div><div class="rs">Arrays &amp; Hashing &middot; 24 Sep 2026</div></div>
+          <span class="scorepill">78</span>
+          <a class="arrow-link" href="session-review.html"><span class="ar">View &rarr;</span></a>
+        </div>
+        <div class="drow" style="grid-template-columns:1fr auto auto">
+          <div><div class="rt">Valid Parentheses</div><div class="rs">Stacks &middot; 22 Sep 2026</div></div>
+          <span class="scorepill">81</span>
+          <a class="arrow-link" href="session-review.html"><span class="ar">View &rarr;</span></a>
+        </div>
+        <div class="drow" style="grid-template-columns:1fr auto auto">
+          <div><div class="rt">LRU Cache</div><div class="rs">Design &middot; 19 Sep 2026</div></div>
+          <span class="scorepill">69</span>
+          <a class="arrow-link" href="session-review.html"><span class="ar">View &rarr;</span></a>
+        </div>
+        <div class="drow" style="grid-template-columns:1fr auto auto">
+          <div><div class="rt">Word Ladder</div><div class="rs">Graphs / BFS &middot; 16 Sep 2026</div></div>
+          <span class="scorepill">72</span>
+          <a class="arrow-link" href="session-review.html"><span class="ar">View &rarr;</span></a>
+        </div>
+      </div>
+
+      <!-- RIGHT: progress sparkline -->
+      <div class="dcard">
+        <div class="dc-head">
+          <h2>Your progress</h2>
+        </div>
+        <svg width="100%" height="96" viewBox="0 0 260 96" preserveAspectRatio="none" role="img" aria-label="Average score trending up over the last five sessions" style="display:block;margin:4px 0 2px">
+          <polyline points="6,74 66,66 126,78 186,52 250,40" fill="none" stroke="#12a150" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="6" cy="74" r="3" fill="#12a150"/>
+          <circle cx="66" cy="66" r="3" fill="#12a150"/>
+          <circle cx="126" cy="78" r="3" fill="#12a150"/>
+          <circle cx="186" cy="52" r="3" fill="#12a150"/>
+          <circle cx="250" cy="40" r="3.4" fill="#12a150"/>
+        </svg>
+        <p class="soft" style="font-size:13.5px;margin-top:6px">Avg score, last 5 sessions</p>
+        <p class="muted" style="font-size:13px;margin-top:14px;line-height:1.5">A few more sessions will make this trend meaningful. Keep practising to see where you are really improving.</p>
+      </div>
+
+    </div>
+
+    <!-- Maya's last feedback (voice) -->
+    <div class="dcard" style="margin-top:22px">
+      <div class="dc-head">
+        <h2>Maya's last feedback</h2>
+      </div>
+      <div class="voicefb">
+        <div class="voicefb-top">
+          <span class="play" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="who"><b>Maya</b><span>Spoken feedback</span></span>
+          <span class="vwave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="dur">0:14</span>
+        </div>
+        <p class="quote">"Strong instinct reaching for a hash map. Next time, <em>say the complexity out loud</em> before you write the loop, not after."</p>
+        <div class="powered"><img src="logos/elevenlabs.svg" alt="ElevenLabs"> Maya's voice, powered by ElevenLabs</div>
+      </div>
+    </div>
+
+    <!-- practise by company / campus -->
+    <div class="dcard" style="margin-top:22px">
+      <div class="dc-head">
+        <h2>Practise for where you are going</h2>
+      </div>
+      <div class="ptiles">
+        <a class="ptile" href="company-prep.html">
+          <div class="pt-h"><span class="pt-k">By company</span></div>
+          <h3>Interview in each company's style.</h3>
+          <p>Drill the exact patterns your target teams lean on.</p>
+          <span class="pt-go">Open company prep &rarr;</span>
+        </a>
+        <a class="ptile" href="campus-prep.html">
+          <div class="pt-h"><span class="pt-k">By campus</span><span class="chip chip-soon">Placement season</span></div>
+          <h3>Your campus placement portal.</h3>
+          <p>See which companies are coming to your campus this season and prepare for each.</p>
+          <span class="pt-go">Open campus portal &rarr;</span>
+        </a>
+      </div>
+    </div>
+
+  </div></main>
+
+  <script>
+    // Guard: only a logged-in candidate can see this page.
+    (function(){ try{ var s=JSON.parse(localStorage.getItem("sviam_demo")||"null"); if(!s||s.role!=="candidate"){ location.href="signin.html"; } }catch(e){ location.href="signin.html"; } })();
+  </script>
+  <script src="site.js"></script>
+</body>
+</html>

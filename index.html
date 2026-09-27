@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SViam — Maya, an AI technical interviewer</title>
+<meta name="description" content="Maya interviews like a senior engineer. Developers practise until they are ready. Companies run the real interview and hire on evidence." />
+<link rel="stylesheet" href="site.css" />
+</head>
+<body data-page="home">
+  <nav class="site" data-nav></nav>
+
+  <!-- centered full-screen hero, supported-by pinned to the bottom -->
+  <header class="hero-center">
+    <div class="hc-main">
+      <div class="wrap">
+        <h1><span class="rot" id="rot" data-words="Practise,Master,Run,Score">Practise</span> the interview that decides.</h1>
+        <div class="cta">
+          <a class="btn btn-green btn-lg" href="practice.html">Start practising</a>
+          <a class="btn btn-outline btn-lg" href="companies.html">For companies</a>
+        </div>
+        <p class="note"><b>Free to try.</b> Practice is live today. Hiring is in a limited pilot.</p>
+      </div>
+    </div>
+    <div class="hc-support">
+      <div class="wrap sup-row">
+        <span class="lbl">Supported by</span>
+        <a class="el-link" href="https://elevenlabs.io/startup-grants" target="_blank" rel="noopener"><img class="el-logo" src="logos/elevenlabs.svg" alt="ElevenLabs">ElevenLabs Grants</a>
+        <span class="sup-sep">&middot;</span>
+        <span class="names">Plaksha Entrepreneurship Support Program 2026</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- practise by company and campus -->
+  <section id="paths"><div class="wrap">
+    <div class="center" style="max-width:640px;margin:0 auto 40px">
+      <h2>Practise where it actually counts.</h2>
+      <p class="lead" style="margin-top:14px">By the company style you are targeting, and for your campus placement season.</p>
+    </div>
+    <div class="ptiles">
+      <div class="ptile">
+        <div class="pt-h"><span class="pt-k">By company</span></div>
+        <h3>Interview in the style each company asks.</h3>
+        <p>Question sets modelled on how different kinds of teams actually interview.</p>
+        <div class="pt-sets"><span class="pt-set">Big Tech</span><span class="pt-set">Fintech</span><span class="pt-set">Product startup</span></div>
+        <a class="pt-go" href="practice.html#company">Explore company sets &rarr;</a>
+        <p class="pt-note">Sets are modelled on public interview patterns. Not affiliated with the companies named.</p>
+      </div>
+      <div class="ptile">
+        <div class="pt-h"><span class="pt-k">By campus</span><span class="chip chip-soon">Rolling out</span></div>
+        <h3>Placement season ready.</h3>
+        <p>Aptitude, DSA, and communication, tuned to what actually comes to your campus.</p>
+        <form class="wl" id="wlform">
+          <input type="email" id="wlemail" placeholder="you@college.edu" aria-label="College email" required>
+          <button class="btn btn-green" type="submit">Join waitlist</button>
+        </form>
+        <p class="wl-note" id="wlnote">We will email you when campus prep opens for your college.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- live interview demo -->
+  <section id="demo" style="padding-top:0"><div class="wrap">
+    <div class="frame">
+      <div class="frame-bar">
+        <span class="live"><span class="dot"></span>Live interview</span>
+        <span class="qchip">Two Sum &middot; Easy</span>
+        <span class="timer" style="margin-left:auto">12:04</span>
+      </div>
+      <div class="frame-body">
+        <div class="pane convo">
+          <div class="pane-label">Conversation</div>
+          <div class="msg maya"><div class="who">Maya</div><div class="bubble">Walk me through your approach before you write anything.</div></div>
+          <div class="msg you"><div class="who">You</div><div class="bubble">I would keep a hash map of the numbers I have seen, so each lookup is constant time.</div></div>
+          <div class="msg maya"><div class="who">Maya</div><div class="bubble" id="mayaMsg">Good. Now return the indices when you find the match.</div></div>
+        </div>
+        <div class="code" id="code">
+          <span class="row"><span class="ln">1</span><span class="cm"># two sum</span></span>
+          <span class="row"><span class="ln">2</span><span class="kw">def</span> <span class="fn">two_sum</span>(nums, target):</span>
+          <span class="row"><span class="ln">3</span>&nbsp;&nbsp;seen = {}</span>
+          <span class="row"><span class="ln">4</span>&nbsp;&nbsp;<span class="kw">for</span> i, n <span class="kw">in</span> enumerate(nums):</span>
+          <span class="row" id="l5"><span class="ln">5</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> target - n <span class="kw">in</span> seen:</span>
+          <span class="row"><span class="ln">6</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="typed"></span><span class="caret"></span></span>
+        </div>
+      </div>
+      <div class="signals" id="signals">
+        <span class="sig-label">Signals</span>
+        <span class="sig" data-sig="reasoning">Reasoning</span>
+        <span class="sig" data-sig="edge">Edge cases</span>
+        <span class="sig" data-sig="complexity">Complexity</span>
+      </div>
+      <div class="frame-foot">
+        <span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+        <span id="footMsg">Maya is listening.</span>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- one dark band -->
+  <section class="closing-dark big"><div class="wrap">
+    <h2>Prove you can build.<br>Or find out who can.</h2>
+    <p>One live AI interview. Developers get real feedback; companies get evidence, not a résumé guess.</p>
+    <div class="cta">
+      <a class="btn btn-green btn-lg" href="practice.html">Start practising</a>
+      <a class="btn btn-onwhite btn-lg" href="companies.html">For companies</a>
+    </div>
+  </div></section>
+
+  <footer class="site" data-foot></footer>
+  <script src="site.js"></script>
+  <script>
+    var wl = document.getElementById("wlform");
+    if (wl) wl.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var em = (document.getElementById("wlemail") || {}).value || "";
+      window.location.href = "mailto:vikas.kumar@sviam.in?subject=" +
+        encodeURIComponent("Campus prep waitlist") + "&body=" +
+        encodeURIComponent("Please add me to the campus prep waitlist. College email: " + em);
+      var n = document.getElementById("wlnote");
+      if (n) n.textContent = "Opening your email to confirm. We will be in touch.";
+    });
+  </script>
+</body>
+</html>

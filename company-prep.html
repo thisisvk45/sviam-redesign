@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Company prep &middot; SViam</title>
+<link rel="stylesheet" href="site.css" />
+<style>
+  .pg{padding:100px 0 90px}
+  .pg-head{margin-bottom:24px}
+  .pg-head h1{font-size:clamp(26px,3vw,34px)}
+  .pg-head p{color:var(--ink-2);margin-top:8px;font-size:16.5px;max-width:62ch}
+  .cat-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+  /* company grid */
+  .cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:16px}
+  .ccard{text-align:left;background:var(--surface);border:1px solid var(--line-2);border-radius:14px;padding:20px 20px;cursor:pointer;transition:border-color .15s,transform .15s;font-family:inherit}
+  .ccard:hover{border-color:var(--ink-3);transform:translateY(-2px)}
+  .ccard.active{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-wash)}
+  .ccard .cname{font-size:17px;font-weight:600;letter-spacing:-.01em}
+  .ccard .ccat{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3);margin-top:2px}
+  .ccard .cfocus{font-size:13.5px;color:var(--ink-2);margin-top:12px;line-height:1.42}
+  .ccard .cmeta{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-top:12px}
+  /* selected company panel */
+  .cset{margin-top:30px}
+  .cset .dc-head h2 span{color:var(--accent-text)}
+  .cnote{font-size:12.5px;color:var(--ink-3);margin-top:16px}
+  @media(max-width:860px){.cgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.cgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-page="practice">
+  <nav class="site" data-nav></nav>
+
+  <main class="pg"><div class="wrap">
+
+    <a class="rv-back" href="questions.html" style="font-size:13.5px;color:var(--ink-2);display:inline-flex;gap:7px;margin-bottom:18px">&larr; Back to practice</a>
+
+    <div class="pg-head">
+      <span class="eyebrow">Practice &middot; By company</span>
+      <h1>Interview in each company's style.</h1>
+      <p>Every company interviews to its own pattern. Pick a target and drill the questions that kind of team leans on, in the style it favours &mdash; instead of grinding a random bank.</p>
+    </div>
+
+    <div class="cat-bar">
+      <button class="qchip active" type="button" data-cat="All">All</button>
+      <button class="qchip" type="button" data-cat="Big Tech">Big Tech</button>
+      <button class="qchip" type="button" data-cat="Fintech">Fintech</button>
+      <button class="qchip" type="button" data-cat="Startups">Startups</button>
+      <button class="qchip" type="button" data-cat="Service">Service</button>
+    </div>
+
+    <div class="cgrid" id="cgrid">
+      <button class="ccard active" data-co="Google" data-cat="Big Tech"><div class="cname">Google</div><div class="ccat">Big Tech</div><div class="cfocus">Graph &amp; DP heavy, crisp complexity talk.</div><div class="cmeta">18 questions &middot; Med–Hard</div></button>
+      <button class="ccard" data-co="Amazon" data-cat="Big Tech"><div class="cname">Amazon</div><div class="ccat">Big Tech</div><div class="cfocus">DSA plus leadership-principle framing.</div><div class="cmeta">16 questions &middot; Med</div></button>
+      <button class="ccard" data-co="Microsoft" data-cat="Big Tech"><div class="cname">Microsoft</div><div class="ccat">Big Tech</div><div class="cfocus">Trees, strings, clean edge-case handling.</div><div class="cmeta">14 questions &middot; Easy–Med</div></button>
+      <button class="ccard" data-co="Meta" data-cat="Big Tech"><div class="cname">Meta</div><div class="ccat">Big Tech</div><div class="cfocus">Fast arrays &amp; graphs, two questions a round.</div><div class="cmeta">15 questions &middot; Med</div></button>
+      <button class="ccard" data-co="Razorpay" data-cat="Fintech"><div class="cname">Razorpay</div><div class="ccat">Fintech</div><div class="cfocus">Practical DSA plus money-safe edge cases.</div><div class="cmeta">12 questions &middot; Med</div></button>
+      <button class="ccard" data-co="Zerodha" data-cat="Fintech"><div class="cname">Zerodha</div><div class="ccat">Fintech</div><div class="cfocus">Systems thinking, latency &amp; correctness.</div><div class="cmeta">10 questions &middot; Med–Hard</div></button>
+      <button class="ccard" data-co="Swiggy" data-cat="Startups"><div class="cname">Swiggy</div><div class="ccat">Startups</div><div class="cfocus">Real-world modelling, maps &amp; queues.</div><div class="cmeta">11 questions &middot; Med</div></button>
+      <button class="ccard" data-co="Flipkart" data-cat="Startups"><div class="cname">Flipkart</div><div class="ccat">Startups</div><div class="cfocus">Scale-flavoured DSA and design rounds.</div><div class="cmeta">13 questions &middot; Med</div></button>
+      <button class="ccard" data-co="TCS" data-cat="Service"><div class="cname">TCS</div><div class="ccat">Service</div><div class="cfocus">Aptitude, fundamentals, clean basics.</div><div class="cmeta">20 questions &middot; Easy–Med</div></button>
+      <button class="ccard" data-co="Infosys" data-cat="Service"><div class="cname">Infosys</div><div class="ccat">Service</div><div class="cfocus">Logic, arrays, and core CS recall.</div><div class="cmeta">18 questions &middot; Easy–Med</div></button>
+    </div>
+
+    <!-- selected company's set -->
+    <div class="dcard cset">
+      <div class="dc-head">
+        <h2><span id="csetName">Google</span> set</h2>
+        <a href="questions.html">Full bank &rarr;</a>
+      </div>
+      <div class="qtable" id="csetTable"></div>
+      <p class="cnote">Sets are modelled on publicly discussed interview patterns. SViam is not affiliated with, or endorsed by, the companies named.</p>
+    </div>
+
+  </div></main>
+
+  <script>
+    // Guard: only a logged-in candidate can see this page.
+    (function(){ try{ var s=JSON.parse(localStorage.getItem("sviam_demo")||"null"); if(!s||s.role!=="candidate"){ location.href="signin.html"; } }catch(e){ location.href="signin.html"; } })();
+  </script>
+  <script src="site.js"></script>
+  <script>
+    (function () {
+      // Each company's illustrative first-round set.
+      var SETS = {
+        Google: [["Word Ladder","Graphs / BFS","Hard"],["Course Schedule","Graphs","Medium"],["Coin Change","Dynamic Programming","Medium"],["Serialize & Deserialize Binary Tree","Trees","Hard"]],
+        Amazon: [["Number of Islands","Graphs / DFS","Medium"],["LRU Cache","Design","Medium"],["Two Sum","Arrays & Hashing","Easy"],["Merge Intervals","Intervals","Medium"]],
+        Microsoft: [["Validate BST","Trees","Medium"],["Reverse Linked List","Linked List","Easy"],["Valid Parentheses","Stacks","Easy"],["Group Anagrams","Arrays & Hashing","Medium"]],
+        Meta: [["Merge Intervals","Intervals","Medium"],["Number of Islands","Graphs / DFS","Medium"],["Best Time to Buy & Sell Stock","Arrays","Easy"],["Course Schedule","Graphs","Medium"]],
+        Razorpay: [["Min Stack","Stacks","Medium"],["Two Sum","Arrays & Hashing","Easy"],["LRU Cache","Design","Medium"],["Merge Intervals","Intervals","Medium"]],
+        Zerodha: [["Design a rate limiter","System design","Medium"],["LRU Cache","Design","Medium"],["Validate BST","Trees","Medium"],["Coin Change","Dynamic Programming","Medium"]],
+        Swiggy: [["Number of Islands","Graphs / DFS","Medium"],["Course Schedule","Graphs","Medium"],["Min Stack","Stacks","Medium"],["Two Sum","Arrays & Hashing","Easy"]],
+        Flipkart: [["LRU Cache","Design","Medium"],["Group Anagrams","Arrays & Hashing","Medium"],["Word Ladder","Graphs / BFS","Hard"],["Merge Intervals","Intervals","Medium"]],
+        TCS: [["Two Sum","Arrays & Hashing","Easy"],["Valid Parentheses","Stacks","Easy"],["Best Time to Buy & Sell Stock","Arrays","Easy"],["Merge Two Sorted Lists","Linked List","Easy"]],
+        Infosys: [["Two Sum","Arrays & Hashing","Easy"],["Reverse Linked List","Linked List","Easy"],["Valid Parentheses","Stacks","Easy"],["Group Anagrams","Arrays & Hashing","Medium"]]
+      };
+      var table = document.getElementById("csetTable");
+      var nameEl = document.getElementById("csetName");
+      function render(co) {
+        var rows = SETS[co] || [];
+        table.innerHTML = rows.map(function (r) {
+          return '<a class="qr" href="session-review.html">' +
+            '<span class="qd ' + r[2] + '">' + r[2] + '</span>' +
+            '<span class="qt">' + r[0] + '</span>' +
+            '<span class="qtopic">' + r[1] + '</span>' +
+            '<span class="qtime">30 min</span>' +
+            '<span class="qprobe">' + co + '-style follow-ups</span>' +
+            '<span class="qgo">Start &rarr;</span></a>';
+        }).join("");
+        nameEl.textContent = co;
+      }
+      render("Google");
+      var cards = document.querySelectorAll(".ccard");
+      cards.forEach(function (c) {
+        c.addEventListener("click", function () {
+          cards.forEach(function (x) { x.classList.remove("active"); });
+          c.classList.add("active");
+          render(c.getAttribute("data-co"));
+        });
+      });
+      // category filter
+      var catChips = document.querySelectorAll("[data-cat]");
+      var chipBtns = document.querySelectorAll(".cat-bar .qchip");
+      chipBtns.forEach(function (b) {
+        b.addEventListener("click", function () {
+          chipBtns.forEach(function (x) { x.classList.remove("active"); });
+          b.classList.add("active");
+          var cat = b.getAttribute("data-cat");
+          cards.forEach(function (c) {
+            var show = cat === "All" || c.getAttribute("data-cat") === cat;
+            c.style.display = show ? "" : "none";
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hiring — SViam</title>
+<link rel="stylesheet" href="site.css" />
+</head>
+<body data-page="dashboard">
+  <nav class="site" data-nav></nav>
+
+  <main class="dash"><div class="wrap">
+
+    <!-- head -->
+    <div class="dash-head">
+      <div>
+        <span class="eyebrow">Hiring &middot; Pilot</span>
+        <h1>Hi SViam, welcome back.</h1>
+        <p class="soft" style="margin-top:8px">Here is your hiring dashboard. Review the interviews Maya ran and decide who moves forward.</p>
+      </div>
+      <a class="btn btn-green btn-lg" href="#">Create a job</a>
+    </div>
+
+    <!-- stats -->
+    <div class="stat-row">
+      <div class="stat"><div class="n">3</div><div class="l">Open jobs</div></div>
+      <div class="stat"><div class="n">34</div><div class="l">Candidates</div></div>
+      <div class="stat"><div class="n">12</div><div class="l">Interviewed</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">Awaiting review</div></div>
+    </div>
+
+    <!-- two-up: needs review + active jobs -->
+    <div class="dgrid g2">
+
+      <!-- LEFT: needs your review -->
+      <div class="dcard" id="candidates">
+        <div class="dc-head">
+          <h2>Needs your review</h2>
+          <a href="job.html#candidates">All candidates</a>
+        </div>
+
+        <div class="drow" style="grid-template-columns:1fr auto auto auto">
+          <div><div class="rt">Candidate A</div><div class="rs">Backend Engineer</div></div>
+          <span class="scorepill">84</span>
+          <span class="needchip clean">Clean</span>
+          <a class="arrow-link" href="job.html" aria-label="Review Candidate A"><span class="go" style="color:var(--accent-text);font-weight:600;font-size:14px">Review <span class="ar">&rarr;</span></span></a>
+        </div>
+
+        <div class="drow" style="grid-template-columns:1fr auto auto auto">
+          <div><div class="rt">Candidate B</div><div class="rs">Frontend Engineer</div></div>
+          <span class="scorepill">79</span>
+          <span class="needchip flag">Overlay detected</span>
+          <a class="arrow-link" href="job.html" aria-label="Review Candidate B"><span class="go" style="color:var(--accent-text);font-weight:600;font-size:14px">Review <span class="ar">&rarr;</span></span></a>
+        </div>
+
+        <div class="drow" style="grid-template-columns:1fr auto auto auto">
+          <div><div class="rt">Candidate C</div><div class="rs">ML Engineer</div></div>
+          <span class="scorepill">76</span>
+          <span class="needchip clean">Clean</span>
+          <a class="arrow-link" href="job.html" aria-label="Review Candidate C"><span class="go" style="color:var(--accent-text);font-weight:600;font-size:14px">Review <span class="ar">&rarr;</span></span></a>
+        </div>
+
+        <div class="drow" style="grid-template-columns:1fr auto auto auto">
+          <div><div class="rt">Candidate D</div><div class="rs">Backend Engineer</div></div>
+          <span class="scorepill">71</span>
+          <span class="needchip clean">Clean</span>
+          <a class="arrow-link" href="job.html" aria-label="Review Candidate D"><span class="go" style="color:var(--accent-text);font-weight:600;font-size:14px">Review <span class="ar">&rarr;</span></span></a>
+        </div>
+
+        <p class="muted" style="font-size:12.5px;margin-top:16px">Sample data. Scores are illustrative, not real evaluations.</p>
+      </div>
+
+      <!-- RIGHT: active jobs -->
+      <div class="dcard" id="jobs">
+        <div class="dc-head">
+          <h2>Active jobs</h2>
+          <a href="job.html">Manage</a>
+        </div>
+
+        <a class="drow" href="job.html" style="grid-template-columns:1fr auto;color:inherit">
+          <div><div class="rt">Backend Engineer</div><div class="rs">Open &middot; Campus Drive 2026</div></div>
+          <span class="rs">12 interviewed &rarr;</span>
+        </a>
+        <a class="drow" href="job.html" style="grid-template-columns:1fr auto;color:inherit">
+          <div><div class="rt">Frontend Engineer</div><div class="rs">Open &middot; Campus Drive 2026</div></div>
+          <span class="rs">9 interviewed &rarr;</span>
+        </a>
+        <a class="drow" href="job.html" style="grid-template-columns:1fr auto;color:inherit">
+          <div><div class="rt">ML Engineer</div><div class="rs">Open &middot; Lateral</div></div>
+          <span class="rs">5 interviewed &rarr;</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- integrity -->
+    <div class="dcard" style="margin-top:22px">
+      <div class="dc-head">
+        <h2>Integrity</h2>
+        <span class="chip chip-soon">In development</span>
+      </div>
+      <p class="soft" style="font-size:16px;line-height:1.5">Maya flagged 1 session for an on-screen answer overlay (Cluely-style). Normal video calls miss this.</p>
+      <p class="muted" style="font-size:13px;margin-top:12px">Live detection is rolling out through the pilot and is still in the making. We do not publish accuracy numbers yet.</p>
+    </div>
+
+    <!-- what your team reviews -->
+    <div class="dcard" id="team" style="margin-top:22px">
+      <div class="dc-head">
+        <h2>What your team reviews</h2>
+        <a href="companies.html">How it works</a>
+      </div>
+      <div class="drow" style="grid-template-columns:1fr 1fr 1fr;border-top:0;padding-top:2px">
+        <a href="companies.html" style="color:inherit"><div class="rt">Transcript</div><div class="rs">How the candidate reasoned</div></a>
+        <a href="companies.html" style="color:inherit"><div class="rt">Code replay</div><div class="rs">The code as it was written</div></a>
+        <a href="companies.html" style="color:inherit"><div class="rt">Scorecard</div><div class="rs">Signals tied to the moment</div></a>
+      </div>
+    </div>
+
+  </div></main>
+
+  <script>
+    // Guard: only a logged-in company can see this page.
+    (function(){ try{ var s=JSON.parse(localStorage.getItem("sviam_demo")||"null"); if(!s||s.role!=="company"){ location.href="signin.html"; } }catch(e){ location.href="signin.html"; } })();
+  </script>
+  <script src="site.js"></script>
+</body>
+</html>

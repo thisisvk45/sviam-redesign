@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact — SViam</title>
+<meta name="description" content="Questions about practice, a payment, or a hiring pilot? Write to the SViam team at vikas.kumar@sviam.in." />
+<link rel="stylesheet" href="site.css" />
+</head>
+<body data-page="">
+  <nav class="site" data-nav></nav>
+
+  <!-- PATTERN 1: split hero, message form on the right -->
+  <header class="hero">
+    <div class="wrap grid12">
+      <div class="hero-copy">
+        <span class="kick"><span class="d"></span>Contact</span>
+        <h1 class="display hero-h1">Talk to us.</h1>
+        <p class="lead">Questions about practice, a payment, or a hiring pilot? Write to <a href="mailto:vikas.kumar@sviam.in" class="arrow-link" style="display:inline;overflow-wrap:anywhere">vikas.kumar@sviam.in</a> and we will get back to you.</p>
+        <div class="contact-lines">
+          <div class="cl">
+            <div class="cl-h">For hiring teams</div>
+            <p>Tell us about your company, the roles you are hiring for, and the interviews you want to run.</p>
+          </div>
+          <div class="cl">
+            <div class="cl-h">Need help with a session?</div>
+            <p>Include your account email and session link. For a payment question, include the payment reference.</p>
+          </div>
+          <div class="cl">
+            <div class="cl-h">Company</div>
+            <p>SVIAM AI PRIVATE LIMITED</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <form id="contactForm" class="msgform">
+          <div class="msgform-h">Send a message</div>
+          <label>Name
+            <input id="name" type="text" required />
+          </label>
+          <label>Email
+            <input id="email" type="email" required />
+          </label>
+          <label>Message
+            <textarea id="message" rows="5" required></textarea>
+          </label>
+          <button type="submit" class="btn btn-green btn-lg">Prepare email</button>
+          <p class="muted" style="font-size:13.5px">This opens your email app with a draft. It does not send anything itself.</p>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <!-- PATTERN 4: one centered dark band -->
+  <section class="closing-dark"><div class="wrap">
+    <h2>Prefer to just email us?</h2>
+    <p>Write directly and we will read it. We are a small team and we answer our own mail.</p>
+    <div class="cta">
+      <a class="btn btn-green btn-lg" href="mailto:vikas.kumar@sviam.in">Email vikas.kumar@sviam.in</a>
+    </div>
+  </div></section>
+
+  <footer class="site" data-foot></footer>
+  <script src="site.js"></script>
+  <script>
+  (function () {
+    var form = document.getElementById("contactForm");
+    if (!form) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var message = document.getElementById("message").value;
+      var subject = "Message from " + name;
+      var body = "From: " + name + " (" + email + ")\n\n" + message;
+      window.location.href =
+        "mailto:vikas.kumar@sviam.in?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(body);
+    });
+  })();
+  </script>
+</body>
+</html>
